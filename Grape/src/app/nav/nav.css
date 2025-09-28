@@ -1,0 +1,127 @@
+/* Base styles */
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.nav-logo{
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-left: 2%;
+    height: 40px;
+}
+
+.nav-logo h1{
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+}
+
+.nav{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 100px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0);
+    padding: 0 2%;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+.img{
+    width: clamp(25px, 4vw, 35px);
+    height: clamp(25px, 4vw, 35px);
+}
+
+.nav-links{
+    display: flex;
+    justify-content: space-between;
+    width: 35%;
+    margin-left: 25%;
+}
+
+.dir{
+    background: none;
+    border: none;
+    color: white;
+    font-family: inherit;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    cursor: pointer;
+    border-radius: 15px;
+    padding: 0.5% 1%;
+    transition: all 0.2s ease-in-out;
+    white-space: nowrap;
+}
+
+.dir:hover{
+    border: 2px solid;
+    border-image: linear-gradient(45deg, #b5b5b5, #000000) 1;
+}
+
+.nav-bout{
+    background-color: transparent;
+    border: 0;
+    cursor: pointer;
+    margin-left: 1%;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .nav{
+        height: 80px;
+        padding: 0 3%;
+    }
+    
+    .nav-links{
+        width: 45%;
+        margin-left: 15%;
+    }
+    
+    .dir{
+        font-size: clamp(0.8rem, 2.5vw, 0.9rem);
+        padding: 1% 2%;
+    }
+    
+    .nav-logo{
+        margin-left: 3%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .nav{
+        height: 70px;
+        padding: 0 4%;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    
+    .nav-logo{
+        margin-left: 0;
+        order: 1;
+    }
+    
+    .nav-links{
+        width: 100%;
+        margin-left: 0;
+        justify-content: space-around;
+        order: 3;
+        margin-top: 2%;
+    }
+    
+    .dir{
+        font-size: clamp(0.7rem, 3vw, 0.8rem);
+        padding: 2% 3%;
+    }
+    
+    .nav-bout{
+        order: 2;
+        margin-left: 0;
+    }
+}

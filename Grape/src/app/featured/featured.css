@@ -1,0 +1,207 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=SUSE+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+.featured-section{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 1;
+    padding: 5% 2%;
+    min-height: 100vh;
+    background-color: rgba(219, 219, 219);
+    align-items: center;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+    box-sizing: border-box;
+}
+
+h2{
+    text-align: center;
+    font-size: clamp(2rem, 6vw, 3rem);
+    font-family: "Playfair Display", sans-serif;
+    color: black;
+    margin-bottom: 3%;
+}
+
+
+.card::before{
+    content: '';
+    position: absolute;
+    width: 100px;
+    background-image: linear-gradient(180deg, rgb(0, 0, 0), rgb(0, 0, 0) );
+    height: 130%;
+    animation: rotBGimg 15s linear infinite;
+    transition: all 0.2s linear;
+
+}
+
+.card::after {
+    content: "";
+    position: absolute;
+    background: rgba(219, 219, 219);
+    inset: 5px;
+    border-radius: 15px;
+}
+
+@keyframes rotBGimg {
+    from{
+        transform: rotate(0deg);
+    }
+    to{
+        transform: rotate(360deg);
+    }
+    
+}
+
+.card img{
+    display: flex;
+    z-index: 1;
+    width: 95%;
+    max-width: 290px;
+    margin-top: -5px;
+    border-radius: 15px;
+}
+
+.card h4{
+    color: rgb(0, 0, 0);
+    z-index: 1;
+    font-size: clamp(1.2rem, 3vw, 1.5rem);
+    text-align: center;
+    margin: 2% 0;
+}
+
+.card p{
+    color: rgb(0, 0, 0);
+    z-index: 1;
+    font-size: clamp(0.8rem, 2vw, 1rem);
+    text-align: center;
+    padding: 0 5%;
+}
+
+.card h6{
+    margin-top: 2%;
+    color: rgb(0, 0, 0);
+    z-index: 1;
+    font-size: clamp(0.7rem, 1.5vw, 0.8rem);
+    text-align: center;
+}
+
+.card{
+    height: 400px;
+    width: 300px;
+    max-width: 90vw;
+    display: flex;
+    background: transparent;
+    position: relative;
+    overflow: hidden;
+    border-radius: 20px;
+    place-content: center;
+    place-items: center;
+    flex-direction: column;
+    transition: all 0.3s ease;
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+.tog{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 5%;
+    width: 95%;
+    min-height: 55vh;
+    border-radius: 50px;
+    flex-wrap: wrap;
+    gap: 4%;
+    padding: 2%;
+}
+
+
+
+body{
+    height: 100vh;
+}
+
+
+.main video{
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+button{
+    margin-top: 6%;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    font-family: "Playfair Display", sans-serif;
+    border: none;
+    border-radius: 10px;
+    width: 30%;
+    min-width: 200px;
+    height: 6vh;
+    min-height: 50px;
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+button:hover{
+    transform: scale(1.05);
+    background-color: rgb(117, 115, 128);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+    .featured-section{
+        padding: 8% 5%;
+    }
+    
+    .tog{
+        flex-direction: column;
+        gap: 4%;
+        width: 100%;
+    }
+    
+    .card{
+        width: 80%;
+        max-width: 350px;
+        height: 350px;
+    }
+    
+    button{
+        width: 50%;
+        min-width: 180px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .featured-section{
+        padding: 10% 8%;
+    }
+    
+    .tog{
+        gap: 8%;
+        margin-top: 8%;
+    }
+    
+    .card{
+        width: 90%;
+        max-width: 280px;
+        height: 320px;
+        margin-bottom: 5%;
+    }
+    
+    .card::before{
+        width: 80px;
+    }
+    
+    button{
+        width: 70%;
+        min-width: 150px;
+        font-size: clamp(1rem, 4vw, 1.3rem);
+    }
+}
